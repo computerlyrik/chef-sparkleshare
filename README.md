@@ -29,15 +29,13 @@ default['sparkleshare']['session_secret'] = 'JustSomeRandomString'
 ```
 
 # Usage
-- Set up 
-```ruby 
-node['sparkleshare']['session_secret'] 
-```
-- Run recipe sparkleshare::dashboard
+- Set up ```node['sparkleshare']['session_secret']```
+- Run recipe ```sparkleshare::dashboard```
 
 # Ideas/Todo
 - Finish and test the server cookbook
-- use LWRP to share repositories as
+- use LWRP to share repositories 
+
 ```ruby
 sparkleshare_repository "myCoolRepo" do
   visibility "private" #"public"

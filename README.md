@@ -1,48 +1,45 @@
-Description
-===========
+# Description
 
-Sets up sparkleshare (basically a git repository) and
-sparkleshare dashboard (continued by community)
+Sets up sparkleshare dashboard (https://github.com/NewProggie/SparkleShare-Android/wiki/Testing-SparkleShare-for-Android)
 
 Dashboard has the advanced capability to sync with mobile devices.
 
-Currently Dashboard is tested in connection with GitLab.
+Currently Dashboard is tested in connection with GitLab. (TODO insert link to gitlab cookbook)
 Currently only one repository (main sync repository) is supported.
 
-Requirements
-============
+# Requirements
+```
+openssh
+```
 
-openssh for connection
-
-Attributes
-==========
-Configure repository
+# Attributes
+Target repository
+```ruby
 default['sparkleshare']['repo_dir'] = "/home/storage"
 default['sparkleshare']['repo_name'] = "SparkleShare"
-
-Configure directory for source code of dashboard
+```
+Directory for source code of dashboard
+```ruby
 default['sparkleshare']['dashboard_dir'] = "/home/storage/dashboard"
-
-Configure session secret for client/server communication
+```
+Session secret for client/server communication
+```ruby
 default['sparkleshare']['session_secret'] = 'JustSomeRandomString'
+```
 
+# Usage
+- Set up ```ruby node['sparkleshare']['session_secret'] ```
+- Run recipe sparkleshare::dashboard
 
-Usage
-=====
-
-Set up node['sparkleshare']['session_secret'] and run recipe
-
-Ideas/Todo
-=========
-
-- Test and ready the server cookbook
-- use repositorys to share via
+# Ideas/Todo
+- Finish and test the server cookbook
+- use LWRP to share repositories as
+```ruby
 sparkleshare_repository "myCoolRepo" do
   visibility "private" #"public"
   path "/path/to/git/repo" #defaults to node attr
-
-- separate recipes
-  
+end
+```
 
 Contact
 =======

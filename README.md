@@ -5,6 +5,7 @@ Sets up sparkleshare dashboard (https://github.com/NewProggie/SparkleShare-Andro
 Dashboard has the advanced capability to sync with mobile devices.
 
 Currently Dashboard is tested in connection with GitLab. (TODO insert link to gitlab cookbook)
+
 Currently only one repository (main sync repository) is supported.
 
 # Requirements
@@ -28,7 +29,10 @@ default['sparkleshare']['session_secret'] = 'JustSomeRandomString'
 ```
 
 # Usage
-- Set up ```ruby node['sparkleshare']['session_secret'] ```
+- Set up 
+```ruby 
+node['sparkleshare']['session_secret'] 
+```
 - Run recipe sparkleshare::dashboard
 
 # Ideas/Todo
@@ -41,7 +45,6 @@ sparkleshare_repository "myCoolRepo" do
 end
 ```
 
-Contact
-=======
+# Contact
 see metadata.rb
 

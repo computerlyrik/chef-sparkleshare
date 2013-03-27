@@ -53,6 +53,6 @@ execute "git init --bare #{node['sparkleshare']['repository']}" do
 end
 
     # Don't allow force-pushing and data to get lost
-execute "git config --file #{node['sparkleshare']['home']}/#{node['sparkleshare']['repository']}/config receive.denyNonFastForwards true" do
+execute "git config --file #{node['sparkleshare']['repository']}/config receive.denyNonFastForwards true" do
   user node['sparkleshare']['user']
 end

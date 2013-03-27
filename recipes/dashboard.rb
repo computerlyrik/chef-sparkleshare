@@ -21,9 +21,12 @@ include_recipe "sparkleshare"
 
 package "redis-server"
 
+::Chef::Recipe.send(:include, Opscode::OpenSSL::Password)
+node.set_unless['sparkleshare']['dashboard']['session_secret'] = secure_password
+
 git node['sparkleshare']['dashboard']['dir'] do
   user node['sparkleshare']['user']
-  repository 'https://github.com/tommyd3mdi/sparkleshare-dashboard.git'
+  repository node['sparkleshare']['dashboard']['repo']
   action :sync
 end
 

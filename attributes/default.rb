@@ -1,4 +1,4 @@
-default['sparkleshare']['user'] = "sparkleshare"
+default['sparkleshare']['user'] = "storage"
 default['sparkleshare']['home'] = "/home/#{node['sparkleshare']['user']}"
 
 default['sparkleshare']['repository'] = "#{node['sparkleshare']['home']}/SparkleShare"

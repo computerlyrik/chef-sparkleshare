@@ -35,7 +35,7 @@ include_recipe 'openssh'
 
 directory "#{node['sparkleshare']['home']}/.ssh" do
   action :create
-  user 'storage'
+  user node['sparkleshare']['user']
   mode 0700
 end
 
@@ -49,10 +49,10 @@ end
 package 'git'
 
 execute "git init --bare #{node['sparkleshare']['repository']}" do
-  user 'storage'
+  user node['sparkleshare']['user']
 end
 
     # Don't allow force-pushing and data to get lost
 execute "git config --file #{node['sparkleshare']['home']}/#{node['sparkleshare']['repository']}/config receive.denyNonFastForwards true" do
-  user 'storage'
+  user node['sparkleshare']['user']
 end

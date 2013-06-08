@@ -44,6 +44,7 @@ end
 #install dazzle
 remote_file "/usr/local/bin/dazzle.sh" do
   source "https://raw.github.com/hbons/Dazzle/master/dazzle.sh"
+  mode 0755
 end
 
 template "#{node['sparkleshare']['dashboard']['dir']}/config.js"

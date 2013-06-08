@@ -41,6 +41,11 @@ include_recipe "npm"
   #end
 end
 
+#install dazzle
+remote_file "/usr/local/bin/dazzle.sh" do
+  source "https://raw.github.com/hbons/Dazzle/master/dazzle.sh"
+end
+
 template "#{node['sparkleshare']['dashboard']['dir']}/config.js"
 
 node_cmd = "/usr/bin/node"

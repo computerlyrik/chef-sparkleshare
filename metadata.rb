@@ -5,6 +5,8 @@ description      "Configures sparkleshare and configures/installes dashboard htt
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          "0.6.0"
 
+supports          "ubuntu"
+
 depends           "openssh"
 depends           "openssl"
 depends           "npm"

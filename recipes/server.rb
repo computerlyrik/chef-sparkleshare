@@ -20,16 +20,15 @@
 #TODO THIS IS NOT PRODUCTION READY
 
 ##Set opensssh variables
-#    echo "" >> /etc/ssh/sshd_config
-#    echo "# SparkleShare" >> /etc/ssh/sshd_config
-#    echo "# Please do not edit the above comment as it's used as a check by Dazzle" >> /etc/ssh/sshd_config
 #    echo "Match User storage" >> /etc/ssh/sshd_config
-#    echo "    PasswordAuthentication no" >> /etc/ssh/sshd_config
-#    echo "    PubkeyAuthentication yes" >> /etc/ssh/sshd_config
 
 #node.set['openssh']['server']['pub_key_authentication'] = "yes"
 #node.set['openssh']['server']['password_authentication'] = "no"
 include_recipe "sparkleshare"
+
+node.set['openssh']['server']['pubkey_authentication']="yes"
+node.set['openssh']['server']['password_authentication']="no"
+node.set['openssh']['server']['permit_root_login']="no"
 
 include_recipe 'openssh'
 

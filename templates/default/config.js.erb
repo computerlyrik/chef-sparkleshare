@@ -1,5 +1,12 @@
 exports.sessionSecret = '<%= node['sparkleshare']['dashboard']['session_secret'] %>';
 
+exports.dazzle = {
+  'home': '<%= node['sparkleshare']['home'] %>',
+  'user': '<%= node['sparkleshare']['user'] %>',
+  'group': '<%= node['sparkleshare']['user'] %>',
+  'bin': '/usr/local/bin/dazzle.sh'
+}
+
 exports.folders = [
   { type: 'git', name: 'Private GIT folder', path: '<%= node['sparkleshare']['repository']%>/<%= node['sparkleshare']['repo_name'] %>', pub: false }
 ];
